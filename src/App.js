@@ -6,15 +6,6 @@ import { Perfil } from './components/perfil';
 import { useAuth0 } from '@auth0/auth0-react'
 import { NavbarPrincipal } from './components/navbar';
 
-function renderSwitch(param) {
-  switch(param) {
-    case 'foo':
-      return 'bar';
-    default:
-      return 'foo';
-  }
-}
-
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
 
@@ -26,12 +17,7 @@ function App() {
     return (
       <div className="App">
         <NavbarPrincipal />
-
-        <div>
-          {renderSwitch('foo')}
-        </div>
-
-        <h1>Hola</h1>
+        <h1>Prueba de commit</h1>
         <Logout />
         <Perfil />
       </div>
