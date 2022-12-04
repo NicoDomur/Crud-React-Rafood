@@ -2,6 +2,8 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from 'react-router-dom';
+import { Logout } from './logout';
 
 export const NavbarPrincipal = () => {
   return (
@@ -10,9 +12,9 @@ export const NavbarPrincipal = () => {
         <Container>
           <Navbar.Brand href="/">Rafood</Navbar.Brand>
           <Nav className="items-navbar">
-            <Nav.Link href="#home">Inhabil</Nav.Link>
-            <Nav.Link href="#features">Inhabil</Nav.Link>
-            <Nav.Link href="#pricing">Inhabil</Nav.Link>
+            <NavLink className="nav-item" to='/'>Principal</NavLink>
+            <NavLink className="nav-item" to='/pruebas'>Pruebas</NavLink>
+            <Logout />
           </Nav>
         </Container>
       </Navbar>
