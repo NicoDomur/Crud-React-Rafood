@@ -1,23 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { GenerarTabla } from '../components/genTablaPokeApi';
 import { Perfil } from '../components/perfil';
-import Petciones from '../services/servicios'
+import Petciones from '../services/servicios';
 
 export default class Principal extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      resPokeApi: [],
+    }
+  }
+
+  componentDidMount() {
+    this.consultaPokeApi();
+  }
+
   consultaPokeApi() {
     Petciones.consultaPokeApi().then(
-      res =>{console.log(res.data.results);}
+      res => { 
+        this.setState({
+          resPokeApi: res.data.results,
+        }); 
+      }
     ).catch(
-      e => {console.log(e);}
+      e => { console.log(e); }
     );
   }
 
   render() {
     return (
       <>
-        <h1>Principal</h1>
-        <button onClick={() => {this.consultaPokeApi();}}>PokeApi</button>
-        <Perfil />
+        <div>
+          <h1>Principal</h1>
+          <Perfil />
+        </div>
+        <div>
+          <GenerarTabla data={this.state.resPokeApi} />
+        </div>
       </>
     );
   }
