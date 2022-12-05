@@ -8,12 +8,14 @@ import { Logout } from './logout';
 export const NavbarPrincipal = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar className='nav-per'>
         <Container>
-          <Navbar.Brand href="/">Rafood</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src={require('../img/nLogo-blanco.png')} height="30" alt="" />
+          </Navbar.Brand>
           <Nav className="items-navbar">
-            <NavLink className="nav-item" to='/'>Principal</NavLink>
-            <NavLink className="nav-item" to='/pruebas'>Pruebas</NavLink>
+            <NavLink className="nav-itm btn-pers" to='/'>Principal</NavLink>
+            <NavLink className="nav-itm btn-pers" to='/pruebas'>Pruebas</NavLink>
             <Logout />
           </Nav>
         </Container>

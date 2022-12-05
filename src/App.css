@@ -32,7 +32,36 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.tabla-admin {
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.nav-itm {
+  text-decoration: none;
+}
+
+.nav-per {
+  background-color: #008080;
+}
+
+.btn-pers {
+  margin: 0 10px 0 10px;
+  padding: 5px ;
+  border-radius: 5px;
+  background-color: #29A0B1;
+  border: none;
+  color: white;
+  border-width: 1px;
+  transition: background-color 0.2s ease-out 10ms
+}
+.btn-pers:hover{
+  background-color: #167D7F;
+  color: white;
 }

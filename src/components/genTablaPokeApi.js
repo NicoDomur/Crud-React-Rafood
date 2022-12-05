@@ -21,7 +21,7 @@ export const GenerarTabla = (props) => {
   return (
     <>
       <div className="table-responsive">
-        <table id="tabla_consulta" className="table table-bordered">
+        <table id="tabla_consulta" className="table table-bordered tabla-admin">
 
           <thead>
             <tr>
