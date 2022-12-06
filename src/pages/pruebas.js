@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Prueba extends Component {
-  render() {
-    return (
+export default function Prueba() {
+  return (
+    <div className='contenedor'>
       <h1>
         Pagina de pruebas
       </h1>
-    );
-
-  }
+    </div>
+  );
 }

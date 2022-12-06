@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
-import { Login } from './components/login';
 import { useAuth0 } from '@auth0/auth0-react'
 import { NavbarPrincipal } from './components/navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Pruebas from './pages/pruebas';
+import Login from './components/login';
 import Principal from './pages/principal';
 
 function App() {
@@ -31,7 +31,6 @@ function App() {
   else {
     return (
       <div className="App">
-        <h1>Necesitas iniciar sesion</h1>
         <Login />
       </div>
     );

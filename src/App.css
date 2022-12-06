@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .App-logo {
@@ -53,7 +54,7 @@
 
 .btn-pers {
   margin: 0 10px 0 10px;
-  padding: 5px ;
+  padding: 5px;
   border-radius: 5px;
   background-color: #29A0B1;
   border: none;
@@ -61,7 +62,16 @@
   border-width: 1px;
   transition: background-color 0.2s ease-out 10ms
 }
-.btn-pers:hover{
+
+.btn-pers:hover {
   background-color: #167D7F;
   color: white;
+}
+
+.contenedor {
+  margin: 15px 35px;
+}
+
+.div-form {
+  margin: 10px 0 10px 0;
 }
