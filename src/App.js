@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Pruebas from './pages/pruebas';
 import Login from './components/login';
 import Principal from './pages/principal';
+import Perfil from './pages/perfil';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Principal />} />
             <Route exact path='/pruebas' element={<Pruebas />} />
+            <Route exact path='/perfil' element={<Perfil />} />
           </Routes>
         </BrowserRouter>
       </div>

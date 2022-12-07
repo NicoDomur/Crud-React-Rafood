@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GenerarTabla } from '../components/genTablaPokeApi';
 import ModalAnadir from '../components/modalAnadir';
-import { Perfil } from '../components/perfil';
 import Petciones from '../services/servicios';
 
 export default function Principal() {
@@ -14,7 +13,7 @@ export default function Principal() {
 
   function ConsultaPokeApi() {
     Petciones.consultaPokeApi().then(
-      res => { 
+      res => {
         setResPokeApi(res.data.results);
       }
     ).catch(
@@ -24,8 +23,7 @@ export default function Principal() {
   return (
     <div className='contenedor'>
       <div>
-        <h1>Principal</h1>
-        <Perfil />
+        <h1 className='titulo'>Principal</h1>
       </div>
       <div>
         <ModalAnadir />
