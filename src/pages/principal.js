@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-//import { GenerarTabla } from '../components/genTablaPokeApi';
-//import { GenerarTablaComida } from '../components/tablas/genTablaComida';
-//import ModalAnadir from '../components/tablas/modalAnadir';
 import { useAuth0 } from '@auth0/auth0-react';
 import Peticiones from '../services/servicios';
 import alertaPeque from '../components/swal-pequeno';
@@ -66,8 +63,6 @@ export default function Principal() {
   }
 
   function editar () {
-    //const idComida = idComida;
-    
     const nombre = document.getElementById('nombre').value;
     const descripcion = document.getElementById('descripcion').value;
     const categoria = document.getElementById('categoria').value;
@@ -98,7 +93,7 @@ export default function Principal() {
   function eliminar (id) {
     console.log(id);
     Peticiones.eliminarComida(id).then(
-      response => {
+      () => {
         ConsultaComida();
         alertaPeque();
       }
@@ -253,7 +248,6 @@ export default function Principal() {
           </button>
         </Modal.Footer>
       </Modal>
-
 
       <Modal show={mostrarME} onHide={handleCerrarME} size="lg">
         <Modal.Header closeButton style={{ backgroundColor: "#008080", color: "#ffffff" }}>
