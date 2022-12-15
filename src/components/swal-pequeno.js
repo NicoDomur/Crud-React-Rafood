@@ -13,7 +13,7 @@ export default function alertaPeque(props) {
     }
   });
   return Toast.fire({
-    icon: 'success',
-    title: 'Item eliminado correctamente'
+    icon: props.icono,
+    title: props.texto
   });
 }

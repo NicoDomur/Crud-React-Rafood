@@ -20,10 +20,21 @@ const editarComida = (jsonEditar) => {
   return axios.put('http://192.168.184.1:8083/editarreact', jsonEditar);
 }
 
+
+const consultaPedidos = (cr7) =>{
+  return axios.get('http://192.168.184.1:8083/pedidosreact/' + cr7);
+}
+
+const eliminarPedidos = (messi) =>{
+  return axios.delete('http://192.168.184.1:8083/eliminarpedidos/' + messi);
+}
+
 export default {
   consultaPokeApi,
   consultaComida,
   anadirComida,
   eliminarComida,
-  editarComida
+  editarComida,
+  consultaPedidos,
+  eliminarPedidos,
 }

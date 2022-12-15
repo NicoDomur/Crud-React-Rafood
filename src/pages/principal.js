@@ -20,20 +20,22 @@ export default function Principal() {
   const handleMostrarME = () => setmostrarME(true);
 
   useEffect(() => {
-    ConsultaComida();
+    consultaComida();
   }, []);
 
-  function ConsultaComida() {
+  function consultaComida() {
     Peticiones.consultaComida(user.name).then(
       res => {
-        console.log(res.data)
         setResConsComida(res.data);
+      }
+    ).catch(
+      e => {
+        alertaPeque({ texto: 'Hubo un error: ' + e, icono: 'error' });
       }
     );
   }
 
   function anadir() {
-    console.log(resConsComida.fk_idtiendas);
     const nombre = document.getElementById('nombre').value;
     const descripcion = document.getElementById('descripcion').value;
     const categoria = document.getElementById('categoria').value;
@@ -49,20 +51,20 @@ export default function Principal() {
       "imagen": imagen,
       "fkTienda": resConsComida[0].fk_idtiendas,
     };
-    console.log(json);
     Peticiones.anadirComida(json).then(
-      response => {
-        console.log(response, "Logrado");
+      () => {
         handleCerrarMA();
-        ConsultaComida();
-        alertaPeque();
+        consultaComida();
+        alertaPeque({ texto: 'Comida añadida con exito.', icono: 'success' });
       }
     ).catch(
-      e => { console.log(e); }
+      e => {
+        alertaPeque({ texto: 'Hubo un error: ' + e, icono: 'error' });
+      }
     );
   }
 
-  function editar () {
+  function editar() {
     const nombre = document.getElementById('nombre').value;
     const descripcion = document.getElementById('descripcion').value;
     const categoria = document.getElementById('categoria').value;
@@ -78,27 +80,29 @@ export default function Principal() {
       "imagen": imagen,
       "idcomida": idComida,
     };
-    console.log(json);
     Peticiones.editarComida(json).then(
       () => {
         handleCerrarME();
-        ConsultaComida();
-        alertaPeque();
+        consultaComida();
+        alertaPeque({ texto: 'Comida editada con exito', icono: 'success' });
       }
     ).catch(
-      e => { console.log(e); }
+      e => {
+        alertaPeque({ texto: 'Hubo un error: ' + e, icono: 'error' });
+      }
     );
   }
 
-  function eliminar (id) {
-    console.log(id);
+  function eliminar(id) {
     Peticiones.eliminarComida(id).then(
       () => {
-        ConsultaComida();
-        alertaPeque();
+        consultaComida();
+        alertaPeque({ texto: 'Comida eliminada con exito.', icono: 'success' });
       }
     ).catch(
-      e => { console.log(e); }
+      e => {
+        alertaPeque({ texto: 'Hubo un error: ' + e, icono: 'error' });
+      }
     );
   }
 

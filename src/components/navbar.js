@@ -18,7 +18,7 @@ export const NavbarPrincipal = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavLink className="btn-pers nav-itm" to='/'>Principal</NavLink>
-            <NavLink className="btn-pers nav-itm" to='/pruebas'>Pedidos</NavLink>
+            <NavLink className="btn-pers nav-itm" to='/pedidos'>Pedidos</NavLink>
           </Nav>
           <Nav>
             <Logout />
